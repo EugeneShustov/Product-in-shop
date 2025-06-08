@@ -4,24 +4,27 @@ class product:
         self.__store = store
         self.__price = price
 
-    def info(self):
-        return f"{self.__name}: {self.__store}, {self.__price} руб."
-
+    @property
     def name(self):
         return self.__name
 
+    @property
     def store(self):
         return self.__store
 
+    @property
     def price(self):
         return self.__price
+
+    def info(self):
+        return f"{self.__name}: {self.__store}, {self.__price} руб."
 
     def __add__(self, other):
         if isinstance(other, product):
             return self.__price + other.__price
         raise TypeError("Нельзя сложить продукт")
 
-class warehouse:
+class Warehouse:
     def __init__(self):
         self.__products = []
 
@@ -52,11 +55,11 @@ class warehouse:
     def show_products(self):
         return [product.info() for product in self.__products]
 
-product_one = product("Бананы", "Санта", 10)
-product_two = product("Груши", "Грин", 15)
-product_three = product("Яблоки", "Белмаркет", 10)
+product_one = Product("Бананы", "Санта", 10)
+product_two = Product("Груши", "Грин", 15)
+product_three = Product("Яблоки", "Белмаркет", 10)
 
-warehouse = warehouse()
+warehouse = Warehouse()
 warehouse.add(product_one)
 warehouse.add(product_two)
 warehouse.add(product_three)
