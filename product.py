@@ -52,9 +52,9 @@ class warehouse:
     def show_products(self):
         return [product.info() for product in self.__products]
 
-product1 = product("Бананы", "Санта", 10)
-product2 = product("Груши", "Грин", 15)
-product3 = product("Яблоки", "Белмаркет", 10)
+product_one = product("Бананы", "Санта", 10)
+product_two = product("Груши", "Грин", 15)
+product_three = product("Яблоки", "Белмаркет", 10)
 
 warehouse = warehouse()
 warehouse.add(product1)
