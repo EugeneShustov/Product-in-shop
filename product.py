@@ -57,9 +57,9 @@ product_two = product("Груши", "Грин", 15)
 product_three = product("Яблоки", "Белмаркет", 10)
 
 warehouse = warehouse()
-warehouse.add(product1)
-warehouse.add(product2)
-warehouse.add(product3)
+warehouse.add(product_one)
+warehouse.add(product_two)
+warehouse.add(product_three)
 
 print(warehouse.get_product_by_index(1))
 print(warehouse.get_product_by_name("Яблоки"))
@@ -67,4 +67,4 @@ print(warehouse.get_product_by_name("Яблоки"))
 warehouse.sort_products("price")
 print(warehouse.show_products())
 
-print(product1 + product3)
+print(product_one + product_three)
